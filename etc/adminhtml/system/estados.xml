@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright  2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+	<group id="estado" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+		<label>Estados del Pedido</label>
+		<field id="inicial" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">  
+			<label>Estado inical del pedido</label>  
+			<comment>Para pagos con tarjetas de credito mientras espera respuesta del gateway</comment>
+			<source_model>Troyantec\Paymentez\Model\Config\Source\Order\Status</source_model>  
+		</field> 
+		<field id="aprobado" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">  
+			<label>Estado del pedido cuando el pago es aprobado</label>  
+			<comment>Estado final informado por el medio de pago</comment>
+			<source_model>Troyantec\Paymentez\Model\Config\Source\Order\Status</source_model>  
+		</field> 
+		<field id="rechazado" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">  
+			<label>Estado del pedido cuando el pago es rechazado</label>  
+			<comment>Cuando por cualquier motivo la transaccion fue denegada</comment>
+			<source_model>Troyantec\Paymentez\Model\Config\Source\Order\Status</source_model>  
+		</field> 
+		<field id="offline" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">  
+			<label>Estado del pedido cuando se selecciona algun tipo de off-line</label>  
+			<source_model>Troyantec\Paymentez\Model\Config\Source\Order\Status</source_model>  
+		</field> 
+	</group>
+</include>

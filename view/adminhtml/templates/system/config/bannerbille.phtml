@@ -1,0 +1,87 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+/**
+ * @see \Magento\Paypal\Block\Adminhtml\System\Config\ApiWizard
+ * @var \Magento\Paypal\Block\Adminhtml\System\Config\ApiWizard $block
+ */
+
+?>
+<style>
+.tp_bannerbille_container{
+    width: 100%;
+    margin: auto;
+}
+
+.tp_banner_bille_radio{
+    width: 5%;
+    margin: auto;
+    float: left;
+    padding: 7px
+}
+
+.tp_bannerbille_logo{
+    width: 90%;
+    margin: auto;
+    float: left
+}
+</style>
+
+<div id="tp_configuracion_bannerbille" style="display: block">
+    <div class="tp_bannerbille_container">
+        <div class="tp_banner_bille_radio">
+            <input id="tp_bannerbille_radio_1" type="radio" name="groups[todopago][fields][bannerbille][value]" value="1"
+                <?php if( $block->buscarConfig() == 1 OR empty($block->buscarConfig()) ){ echo 'checked'; } ?>
+             />
+         </div>
+
+         <div class="tp_bannerbille_logo">
+            <label for="tp_bannerbille_radio_1">
+                <img src="https://todopago.com.ar/sites/todopago.com.ar/files/billetera/pluginstarjeta1.jpg" />
+            </label>
+         </div>
+    </div>
+
+    <div class="tp_bannerbille_container">
+        <div class="tp_banner_bille_radio">
+            <input id="tp_bannerbille_radio_2" type="radio" name="groups[todopago][fields][bannerbille][value]" value="2"
+                <?php if( $block->buscarConfig() == 2 ){ echo 'checked'; } ?>
+             />
+         </div>
+
+         <div class="tp_bannerbille_logo">
+            <label for="tp_bannerbille_radio_2">
+                <img src="https://todopago.com.ar/sites/todopago.com.ar/files/billetera/pluginstarjeta2.jpg" />
+            </label>
+         </div>
+    </div>
+
+    <div class="tp_bannerbille_container">
+        <div class="tp_banner_bille_radio">
+            <input id="tp_bannerbille_radio_3" type="radio" name="groups[todopago][fields][bannerbille][value]" value="3"
+                <?php if( $block->buscarConfig() == 3 ){ echo 'checked'; } ?>
+             />
+         </div>
+
+         <div class="tp_bannerbille_logo">
+            <label for="tp_bannerbille_radio_3">
+                <img src="https://todopago.com.ar/sites/todopago.com.ar/files/billetera/pluginstarjeta3.jpg" />
+            </label>
+         </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    require([
+        'jquery',
+        'prototype'
+    ], function(jQuery){     
+        console.log('testing js banner billetera');
+    });
+
+</script>

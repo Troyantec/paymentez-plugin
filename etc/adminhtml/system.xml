@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="paymentez" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Paymentez v1.0.0</label>
+                <field id="versionupdate" translate="label" type="text" sortOrder="-1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label></label>
+                    <comment></comment>
+                    <frontend_model>Troyantec\Paymentez\Block\Adminhtml\System\Config\Versionupdate</frontend_model>
+                </field>
+
+                    <field id="bannerbille" translate="label" type="text" sortOrder="-1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Billetera en checkout</label>
+                    <comment>Seleccione el banner que desea mostrar para Billetera</comment>
+                    <frontend_model>Troyantec\Paymentez\Block\Adminhtml\System\Config\Bannerbille</frontend_model>
+                </field>
+
+
+
+
+
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Activo</label>
+					<comment>Activa y desactiva el módulo de pago</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="vertical_cs" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Segmento del comercio</label>
+					<comment>La elección del segmento determina los tipos de datos a enviar</comment>
+                    <source_model>Troyantec\Paymentez\Model\Config\Source\ControlFraude\Vertical</source_model>
+                </field>
+                <field id="hibrido" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Formulario Hibrido</label>
+					<comment>Activa y desactiva el formulario de pago insite</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="cuotas_enable" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Activar máximo de cuotas</label>
+                    <comment>Activa o desactiva limitar el máximo de cuotas a mistrar en el formulario de pago</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="cuotas_cant" translate="label" type="select" sortOrder="31" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Máximo de cuotas</label>
+                    <comment>Número máximo de cuotas a mistrar en el formulario de pago</comment>
+                     <source_model>Troyantec\Paymentez\Model\Config\Source\Cuotas</source_model>
+                </field>
+                <field id="restore_cart" translate="label" type="select" sortOrder="32" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Restaurar carrito</label>
+                    <comment>Ante una orden o pago fallida, indica si se debe restaurar o no el carrito de compras. Si: restaura el carrito. No: vacía el carrito.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+				<field id="ambiente" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ambiente</label>
+					<comment>Debe ser cofigurado en AMBIENTE -> DEVELOPERS / PRODUCCION</comment>
+                    <source_model>Troyantec\Paymentez\Model\Config\Source\Ambiente</source_model>
+                </field>
+				
+                <field id="allowspecific" translate="label" type="allowspecific" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment from Applicable Countries</label>
+                    <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="51" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment from Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="min_order_total" translate="label" type="text" sortOrder="98" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Minimum Order Total</label>
+                </field>
+                <field id="max_order_total" translate="label" type="text" sortOrder="99" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Maximum Order Total</label>
+                    <comment>Leave empty to disable limit</comment>
+                </field>
+               <field id="timeout_enable" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Activar Timeout</label>
+                    <comment>Configurar tiempo de expiración del formulario de pago personalizado</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>                
+                <field id="timeout" translate="label" type="text" sortOrder="101" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Tiempo de expiración del formulario de pago</label>
+                    <comment>Tiempo maximo en el que se puede realizar el pago en el formulario en milisegundos. Por defecto si no se envia el valor es de 1800000 (30 minutos). Mínimo: 300000. Máximo: 21600000</comment>
+                    <validate>validate-digits validate-digits-range digits-range-300000-21600000</validate>
+                </field>
+
+<!--
+                <field id="googlemaps" translate="label" type="select" sortOrder="102" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Verificar domicilio con Googlemaps</label>
+                    <comment>Verificar domicilio con Googlemaps</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+-->
+				
+				<include path="Troyantec_Paymentez::system/ambiente.xml"/>
+				<include path="Troyantec_Paymentez::system/estados.xml"/>
+            </group>
+        </section>
+    </system>
+</config>

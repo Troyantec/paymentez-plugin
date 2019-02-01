@@ -1,0 +1,10 @@
+{
+    "name": "troyantec/paymentez-plugin",
+    "description": "Plugin de integracion de Paymentez para Magento 2",
+    "type": "magento2-module",
+    "version": "1.0.1",
+    "require": {
+        "troyantec/paymentez-php-sdk": "*"
+    },
+    "autoload": { "files": [ "registration.php" ], "psr-4": { "Troyantec\\Paymentez\\": "" } }
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="empty" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">        
+	<referenceContainer name="head" remove="true"/>
+	<referenceContainer name="header" remove="true"/>
+	<referenceContainer name="menu" remove="true"/>
+	<referenceContainer name="notifications" remove="true"/>
+	<referenceContainer name="footer" remove="true"/>
+	<referenceContainer name="body" remove="true"/>
+	<referenceContainer name="page.wrapper" remove="true"/>
+	<referenceContainer name="require.js" remove="true"/>
+	<referenceContainer name="requirejs-config" remove="true"/>
+	<referenceContainer name="js_cookies" remove="true"/>
+	<referenceContainer name="after.body.start" remove="true"/>
+	
+	<head>
+		<css src="Prisma_TodoPago::css/bootstrap.css" />
+		<css src="Prisma_TodoPago::css/styles.css" />
+		<css src="Prisma_TodoPago::css/flexbox.css" />
+
+		<link src="Prisma_TodoPago::js/form.js" />
+		<remove src="requirejs/require.js"/>
+	</head>
+		
+        <referenceBlock name="root">
+            <action method="setTemplate">
+                <argument name="template" translate="true" xsi:type="string">Prisma_TodoPago::payment/formcustom.phtml</argument>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="root">
+            <block class="Prisma\TodoPago\Block\FormCustom" name="todopago_formcustom" template="Prisma_TodoPago::payment/formcustom.phtml" />
+        </referenceBlock>
+</page> 

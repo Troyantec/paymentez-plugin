@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright  2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+	<group id="ambiente_g" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+		<label>Ambientes</label>
+		<field id="credentials_button" translate="button_label attribute sandbox_button_label" sortOrder="70" showInDefault="1" showInWebsite="1">
+			<label>Autocompletar con Login en TodoPago</label>
+			
+			<attribute type="button_label">Produccion</attribute>
+			<attribute type="button_url">todopago/credential/production</attribute>
+
+			<attribute type="sandbox_button_label">Developers</attribute>
+			<attribute type="sandbox_button_url">todopago/credential/developers</attribute>
+
+			<frontend_model>Troyantec\Paymentez\Block\Adminhtml\System\Config\CredentialsButton</frontend_model>
+		</field>
+		<group id="developers" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+			<label>Developers</label>
+			<field id="merchant" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Merchant ID (Nro de comercio)</label>
+				<comment>Numero de Comercio provisto por Todo Pago</comment>
+			</field>               
+			<field id="apikey" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>API Key</label>
+				<comment>Ingresar el contenido del campo API Key (Credenciales) del Portal de TodoPago. Ejemplo: "PRISMA 912EC803B2CE49E4A541068D495AB570"</comment>
+			</field>                
+			<field id="security" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Security Code</label>
+				<comment>API Key sin TROYANTEC\PAYMENTEZ y sin espacio</comment>
+			</field>
+		</group>
+		<group id="produccion" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+			<label>Produccion</label>
+			<field id="merchant" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Merchant ID (Nro de comercio)</label>
+				<comment>Numero de Comercio provisto por Todo Pago</comment>
+			</field>               
+			<field id="apikey" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>API Key</label>
+				<comment>Ingresar el contenido del campo API Key (Credenciales) del Portal de TodoPago. Ejemplo: "PRISMA 912EC803B2CE49E4A541068D495AB570"</comment>
+			</field>                
+			<field id="security" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Security Code</label>
+				<comment>API Key sin TROYANTEC\PAYMENTEZ y sin espacio</comment>
+			</field>
+		</group>
+	</group>
+</include>

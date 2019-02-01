@@ -1,0 +1,11 @@
+<link  rel="stylesheet" type="text/css"  media="all" href="http://magento2.devteam.com.ar/pub/static/frontend/Magento/luma/es_AR/Prisma_TodoPago/css/bootstrap.css" />
+<link  rel="stylesheet" type="text/css"  media="all" href="http://magento2.devteam.com.ar/pub/static/frontend/Magento/luma/es_AR/Prisma_TodoPago/css/styles.css" />
+
+<?php if($this->getAmbiente() == "test"): ?>
+<script src="https://forms.todopago.com.ar/resources/TPHybridForm-v0.1.js"></script>
+<?php else: ?>
+<script src="https://developers.todopago.com.ar/resources/TPHybridForm-v0.1.js"></script>
+<?php endif; ?>
+
+<script src="<?php echo $this->getJs(); ?>"></script>
+

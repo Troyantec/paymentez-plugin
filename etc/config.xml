@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <payment>
+            <tpredirect>
+                <active>1</active>
+                <title>TpRedirect</title>
+                <order_status>pending_payment</order_status>
+                <instructions>Instruction.</instructions>
+                <payment_action>true</payment_action>
+                <model>Troyantec\Paymentez\Model\TpRedirect</model>
+                <group>online</group>
+            </tpredirect>
+            <tphibrido>
+                <active>1</active>
+                <title>TpHibrido</title>
+                <order_status>pending_payment</order_status>
+                <instructions>Instruction.</instructions>
+                <payment_action>true</payment_action>
+                <model>Troyantec\Paymentez\Model\TpHibrido</model>
+                <group>online</group>
+            </tphibrido>
+
+
+            <tpbille>
+                <active>1</active>
+                <title>TpBille</title>
+                <order_status>pending_payment</order_status>
+                <instructions>Instruction.</instructions>
+                <payment_action>true</payment_action>
+                <model>Troyantec\Paymentez\Model\TpBille</model>
+                <group>online</group>
+            </tpbille>
+
+        </payment>
+    </default>
+</config>
